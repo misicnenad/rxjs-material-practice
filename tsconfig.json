@@ -17,6 +17,13 @@
     "lib": [
       "es2018",
       "dom"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "configFile": "./tslint.json",
+        "suppressWhileTypeErrorsPresent": true
+      }
     ]
   }
 }

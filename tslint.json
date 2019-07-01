@@ -15,6 +15,13 @@
       "rmp",
       "camelCase"
     ],
+    "variable-name": {
+      "options": [
+        "check-format",
+        "ban-keywords",
+        "allow-leading-underscore"
+      ]
+    },
     "component-selector": [
       true,
       "element",

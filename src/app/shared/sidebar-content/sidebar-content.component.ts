@@ -7,16 +7,24 @@ import { SidebarContentService } from './sidebar-content.service';
 @Component({
   selector: 'rmp-sidebar-content',
   templateUrl: './sidebar-content.component.html',
-  styleUrls: ['./sidebar-content.component.scss']
+  styleUrls: ['./sidebar-content.component.scss'],
 })
 export class SidebarContentComponent implements OnInit {
+  menuItemNumber = 0;
 
-  content$: Observable<Submenu[]>;
+  menuItems$: Observable<Submenu[]>;
 
-  constructor(private sidebarService: SidebarContentService) { }
+  constructor(private sidebarService: SidebarContentService) {}
 
   ngOnInit() {
-    this.content$ = this.sidebarService.content$;
+    this.menuItems$ = this.sidebarService.content$;
   }
 
+  setMenuExpanded(index: number) {
+    this.menuItemNumber = index;
+  }
+
+  isMenuExpanded(index: number): boolean {
+    return this.menuItemNumber === index;
+  }
 }

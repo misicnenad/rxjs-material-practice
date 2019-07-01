@@ -13,9 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { SubjectsModule } from './subjects/subjects.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -28,6 +26,6 @@ import { SubjectsModule } from './subjects/subjects.module';
     MatButtonModule,
     MatSidenavModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
