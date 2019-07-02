@@ -1,10 +1,10 @@
 <mat-nav-list>
   <mat-accordion>
-    <ng-container *ngFor="let item of menuItems$ | async; index as i">
+    <ng-container *ngFor="let item of menuItems$ | async">
       <ng-container
         *ngTemplateOutlet="
           item.children ? hasChildren : noChildren;
-          context: { item: item, index: i }
+          context: { item: item }
         "
       >
       </ng-container>
@@ -12,15 +12,10 @@
   </mat-accordion>
 </mat-nav-list>
 
-<ng-template
-  #hasChildren
-  let-item="item"
-  let-parentRoute="parentRoute || ''"
-  let-index="index"
->
+<ng-template #hasChildren let-item="item" let-parentRoute="parentRoute || ''">
   <mat-expansion-panel
-    [expanded]="index ? isMenuExpanded(index) : null"
-    (opened)="index ? setMenuExpanded(index) : null"
+    [expanded]="isMenuExpanded(parentRoute + '' + item.route)"
+    (opened)="setMenuExpanded(parentRoute + '' + item.route)"
   >
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -28,7 +23,7 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-accordion>
-      <ng-container *ngFor="let subitem of item.children; index as i">
+      <ng-container *ngFor="let subitem of item.children">
         <ng-container
           *ngTemplateOutlet="
             subitem.children ? hasChildren : noChildren;
@@ -44,16 +39,11 @@
   </mat-expansion-panel>
 </ng-template>
 
-<ng-template
-  #noChildren
-  let-item="item"
-  let-parentRoute="parentRoute || ''"
-  let-index="index"
->
+<ng-template #noChildren let-item="item" let-parentRoute="parentRoute || ''">
   <a
     mat-list-item
     routerLink="{{ parentRoute }}{{ item.route }}"
-    (click)="!parentRoute ? setMenuExpanded(index) : null"
+    (click)="!parentRoute ? setMenuExpanded(item.route) : null"
   >
     {{ item.displayName }}
   </a>

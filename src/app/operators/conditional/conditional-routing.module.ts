@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultIfEmptyComponent } from './default-if-empty/default-if-empty.component';
+import { EveryComponent } from './every/every.component';
+import { IifComponent } from './iif/iif.component';
+import { SequenceEqualComponent } from './sequence-equal/sequence-equal.component';
 
 const routes: Routes = [
   {
@@ -11,6 +14,18 @@ const routes: Routes = [
   {
       path: 'default-if-empty',
       component: DefaultIfEmptyComponent,
+  },
+  {
+      path: 'every',
+      component: EveryComponent,
+  },
+  {
+      path: 'iif',
+      component: IifComponent,
+  },
+  {
+      path: 'sequence-equal',
+      component: SequenceEqualComponent,
   },
 ];
 

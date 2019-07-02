@@ -1,125 +1,330 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
-import { Submenu } from './models';
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SidebarContentService {
-
   content$ = of([
-    <Submenu>{
+    {
       displayName: 'Home',
       route: '/home',
     },
-    <Submenu>{
+    {
       displayName: 'Operators',
       route: '/operators',
       children: [
-        <Submenu>{
+        {
           displayName: 'Combination',
           route: '/combination',
           children: [
-            <Submenu>{
+            {
               displayName: 'combineAll',
               route: '/combine-all',
             },
-          ]
+            {
+              displayName: 'combineLatest',
+              route: '/combine-latest',
+            },
+            {
+              displayName: 'concat',
+              route: '/concat',
+            },
+            {
+              displayName: 'concatAll',
+              route: '/concat-all',
+            },
+            {
+              displayName: 'endWith',
+              route: '/end-with',
+            },
+            {
+              displayName: 'forkJoin',
+              route: '/fork-join',
+            },
+            {
+              displayName: 'merge',
+              route: '/merge',
+            },
+            {
+              displayName: 'mergeAll',
+              route: '/merge-all',
+            },
+            {
+              displayName: 'pairwise',
+              route: '/pairwise',
+            },
+            {
+              displayName: 'race',
+              route: '/race',
+            },
+            {
+              displayName: 'startWith',
+              route: '/start-with',
+            },
+            {
+              displayName: 'withLatestFrom',
+              route: '/with-latest-from',
+            },
+            {
+              displayName: 'zip',
+              route: '/zip',
+            },
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Conditional',
           route: '/conditional',
           children: [
-            <Submenu>{
+            {
               displayName: 'defaultIfEmpty',
               route: '/default-if-empty',
             },
-          ]
+            {
+              displayName: 'every',
+              route: '/every',
+            },
+            {
+              displayName: 'iif',
+              route: '/iif',
+            },
+            {
+              displayName: 'sequenceEqual',
+              route: '/sequence-equal',
+            },
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Creation',
           route: '/creation',
           children: [
-            <Submenu>{
+            {
+              displayName: 'ajax',
+              route: '/ajax',
+            },
+            {
+              displayName: 'create',
+              route: '/create',
+            },
+            {
+              displayName: 'defer',
+              route: '/defer',
+            },
+            {
+              displayName: 'empty',
+              route: '/empty',
+            },
+            {
+              displayName: 'from',
+              route: '/from',
+            },
+            {
+              displayName: 'fromEvent',
+              route: '/from-event',
+            },
+            {
+              displayName: 'generate',
+              route: '/generate',
+            },
+            {
+              displayName: 'interval',
+              route: '/interval',
+            },
+            {
               displayName: 'of',
               route: '/of',
             },
-          ]
+            {
+              displayName: 'range',
+              route: '/range',
+            },
+            {
+              displayName: 'throw',
+              route: '/throw',
+            },
+            {
+              displayName: 'timer',
+              route: '/timer',
+            },
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Error Handling',
           route: '/error-handling',
           children: [
-            <Submenu>{
+            {
               displayName: 'catch / catchError',
               route: '/catch-catch-error',
             },
-          ]
+            {
+              displayName: 'retry',
+              route: '/retry',
+            },
+            {
+              displayName: 'retryWhen',
+              route: '/retry-when',
+            },
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Filtering',
           route: '/filtering',
           children: [
-            <Submenu>{
+            {
+              displayName: 'audit',
+              route: '/audit',
+            },
+            {
+              displayName: 'auditTime',
+              route: '/audit-time',
+            },
+            {
+              displayName: 'debounce',
+              route: '/debounce',
+            },
+            {
+              displayName: 'debounceTime',
+              route: '/debounce-time',
+            },
+            {
+              displayName: 'distinctUntilChanged',
+              route: '/distinct-until-changed',
+            },
+            {
+              displayName: 'distinctUntilKeyChanged',
+              route: '/distinct-until-key-changed',
+            },
+            {
+              displayName: 'filter',
+              route: '/filter',
+            },
+            {
+              displayName: 'find',
+              route: '/find',
+            },
+            {
+              displayName: 'first',
+              route: '/first',
+            },
+            {
+              displayName: 'ignoreElements',
+              route: '/ignore-elements',
+            },
+            {
+              displayName: 'last',
+              route: '/last',
+            },
+            {
+              displayName: 'sample',
+              route: '/sample',
+            },
+            {
+              displayName: 'single',
+              route: '/single',
+            },
+            {
+              displayName: 'skip',
+              route: '/skip',
+            },
+            {
+              displayName: 'skipUntil',
+              route: '/skip-until',
+            },
+            {
+              displayName: 'skipWhile',
+              route: '/skip-while',
+            },
+            {
+              displayName: 'take',
+              route: '/take',
+            },
+            {
+              displayName: 'takeLast',
+              route: '/take-last',
+            },
+            {
+              displayName: 'takeUntil',
+              route: '/take-until',
+            },
+            {
               displayName: 'takeWhile',
               route: '/take-while',
             },
-          ]
+            {
+              displayName: 'throttle',
+              route: '/throttle',
+            },
+            {
+              displayName: 'throttleTime',
+              route: '/throttle-time',
+            },
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Multicasting',
           route: '/multicasting',
           children: [
-            <Submenu>{
+            {
+              displayName: 'publish',
+              route: '/publish',
+            },
+            {
+              displayName: 'multicast',
+              route: '/multicast',
+            },
+            {
+              displayName: 'share',
+              route: '/share',
+            },
+            {
               displayName: 'shareReplay',
               route: '/share-replay',
             },
-          ]
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Transformation',
           route: '/transformation',
           children: [
-            <Submenu>{
+            {
               displayName: 'switchMap',
               route: '/switch-map',
             },
-          ]
+          ],
         },
-        <Submenu>{
+        {
           displayName: 'Utility',
           route: '/utility',
           children: [
-            <Submenu>{
+            {
               displayName: 'tap / do',
               route: '/tap-do',
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
-    <Submenu>{
+    {
       displayName: 'Subjects',
       route: '/subjects',
       children: [
-        <Submenu>{
+        {
           displayName: 'Subject',
           route: '/subject',
         },
-        <Submenu>{
+        {
           displayName: 'BehaviorSubject',
           route: '/behavior-subject',
         },
-        <Submenu>{
+        {
           displayName: 'AsyncSubject',
           route: '/async-subject',
         },
-        <Submenu>{
+        {
           displayName: 'ReplaySubject',
           route: '/replay-subject',
         },
-      ]
-    }
-  ])
+      ],
+    },
+  ]);
 }

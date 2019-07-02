@@ -10,8 +10,7 @@ import { SidebarContentService } from './sidebar-content.service';
   styleUrls: ['./sidebar-content.component.scss'],
 })
 export class SidebarContentComponent implements OnInit {
-  menuItemNumber = 0;
-
+  selectedRoute = '';
   menuItems$: Observable<Submenu[]>;
 
   constructor(private sidebarService: SidebarContentService) {}
@@ -20,11 +19,11 @@ export class SidebarContentComponent implements OnInit {
     this.menuItems$ = this.sidebarService.content$;
   }
 
-  setMenuExpanded(index: number) {
-    this.menuItemNumber = index;
+  isMenuExpanded(route: string): boolean {
+    return this.selectedRoute.startsWith(route);
   }
 
-  isMenuExpanded(index: number): boolean {
-    return this.menuItemNumber === index;
+  setMenuExpanded(route: string) {
+    this.selectedRoute = route;
   }
 }

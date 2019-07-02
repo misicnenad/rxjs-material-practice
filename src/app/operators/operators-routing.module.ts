@@ -4,9 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'operators',
-    //   pathMatch: 'full',
-    //   redirectTo: 'combination',
-    // },
     children: [
       {
         path: 'combination',
