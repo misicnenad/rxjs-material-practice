@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CatchCatchErrorComponent } from './catch-catch-error/catch-catch-error.component';
-import { RetryComponent } from './retry/retry.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { CatchErrorComponent } from './catch-error/catch-error.component';
 import { RetryWhenComponent } from './retry-when/retry-when.component';
+import { RetryComponent } from './retry/retry.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'catch-catch-error',
+    redirectTo: 'catch-error',
   },
   {
-    path: 'catch-catch-error',
-    component: CatchCatchErrorComponent,
+    path: 'catch-error',
+    component: CatchErrorComponent,
   },
   {
     path: 'retry',

@@ -154,7 +154,7 @@ export class SidebarContentService {
           children: [
             {
               displayName: 'catch / catchError',
-              route: '/catch-catch-error',
+              route: '/catch-error',
             },
             {
               displayName: 'retry',
@@ -287,8 +287,104 @@ export class SidebarContentService {
           route: '/transformation',
           children: [
             {
+              displayName: 'buffer',
+              route: '/buffer',
+            },
+            {
+              displayName: 'bufferCount',
+              route: '/buffer-count',
+            },
+            {
+              displayName: 'bufferTime',
+              route: '/buffer-time',
+            },
+            {
+              displayName: 'bufferToggle',
+              route: '/buffer-toggle',
+            },
+            {
+              displayName: 'bufferWhen',
+              route: '/buffer-when',
+            },
+            {
+              displayName: 'concatMap',
+              route: '/concat-map',
+            },
+            {
+              displayName: 'concatMapTo',
+              route: '/concat-map-to',
+            },
+            {
+              displayName: 'exhaustMap',
+              route: '/exhaust-map',
+            },
+            {
+              displayName: 'groupBy',
+              route: '/group-by',
+            },
+            {
+              displayName: 'map',
+              route: '/map',
+            },
+            {
+              displayName: 'mapTo',
+              route: '/map-to',
+            },
+            {
+              displayName: 'mergeMap / flatMap',
+              route: '/merge-map',
+            },
+            {
+              displayName: 'mergeScan',
+              route: '/merge-scan',
+            },
+            {
+              displayName: 'partition',
+              route: '/partition',
+            },
+            {
+              displayName: 'pluck',
+              route: '/pluck',
+            },
+            {
+              displayName: 'reduce',
+              route: '/reduce',
+            },
+            {
+              displayName: 'scan',
+              route: '/scan',
+            },
+            {
               displayName: 'switchMap',
               route: '/switch-map',
+            },
+            {
+              displayName: 'switchMapTo',
+              route: '/switch-map-to',
+            },
+            {
+              displayName: 'toArray',
+              route: '/to-array',
+            },
+            {
+              displayName: 'window',
+              route: '/window',
+            },
+            {
+              displayName: 'windowCount',
+              route: '/window-count',
+            },
+            {
+              displayName: 'windowTime',
+              route: '/window-time',
+            },
+            {
+              displayName: 'windowToggle',
+              route: '/window-toggle',
+            },
+            {
+              displayName: 'windowWhen',
+              route: '/window-when',
             },
           ],
         },
@@ -298,7 +394,47 @@ export class SidebarContentService {
           children: [
             {
               displayName: 'tap / do',
-              route: '/tap-do',
+              route: '/tap',
+            },
+            {
+              displayName: 'delay',
+              route: '/delay',
+            },
+            {
+              displayName: 'delayWhen',
+              route: '/delay-when',
+            },
+            {
+              displayName: 'dematerialize',
+              route: '/dematerialize',
+            },
+            {
+              displayName: 'finalize / finally',
+              route: '/finalize',
+            },
+            {
+              displayName: 'let',
+              route: '/let',
+            },
+            {
+              displayName: 'repeat',
+              route: '/repeat',
+            },
+            {
+              displayName: 'timeInterval',
+              route: '/time-interval',
+            },
+            {
+              displayName: 'timeout',
+              route: '/timeout',
+            },
+            {
+              displayName: 'timeoutWith',
+              route: '/timeout-with',
+            },
+            {
+              displayName: 'toPromise',
+              route: '/to-promise',
             },
           ],
         },

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PublishComponent } from './publish/publish.component';
+import { RouterModule, Routes } from '@angular/router';
+
 import { MulticastComponent } from './multicast/multicast.component';
-import { ShareComponent } from './share/share.component';
+import { PublishComponent } from './publish/publish.component';
 import { ShareReplayComponent } from './share-replay/share-replay.component';
+import { ShareComponent } from './share/share.component';
 
 const routes: Routes = [
   {
