@@ -16,6 +16,7 @@ import { StartWithComponent } from './start-with/start-with.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 import { ZipComponent } from './zip/zip.component';
 import { CombineAllSourceComponent } from './combine-all/combine-all-source.component';
+import { CombineLatestSourceComponent } from './combine-latest/combine-latest-source.component';
 
 const routes: Routes = [
   {
@@ -26,14 +27,32 @@ const routes: Routes = [
   {
     path: 'combine-all',
     children: [
-      { path: '', outlet: 'sourceCodeOutlet', component:  CombineAllSourceComponent},
-      { path: '', outlet: 'codeExecutionOutlet', component: CombineAllComponent },
+      {
+        path: '',
+        outlet: 'sourceCodeOutlet',
+        component: CombineAllSourceComponent,
+      },
+      {
+        path: '',
+        outlet: 'codeExecutionOutlet',
+        component: CombineAllComponent,
+      },
     ],
-    // component: CombineAllComponent,
   },
   {
     path: 'combine-latest',
-    component: CombineLatestComponent,
+    children: [
+      {
+        path: '',
+        outlet: 'sourceCodeOutlet',
+        component: CombineLatestSourceComponent,
+      },
+      {
+        path: '',
+        outlet: 'codeExecutionOutlet',
+        component: CombineLatestComponent,
+      },
+    ],
   },
   {
     path: 'concat',

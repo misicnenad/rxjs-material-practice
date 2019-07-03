@@ -1,0 +1,15 @@
+<rmp-source-code-container
+  [htmlTemplate]="htmlTemplate"
+  [typescriptTemplate]="typescriptTemplate"
+  [scssTemplate]="scssTemplate"
+></rmp-source-code-container>
+
+<ng-template #htmlTemplate>
+  {{ htmlTemplate$ | async }}
+</ng-template>
+<ng-template #typescriptTemplate>
+  {{ typescriptTemplate$ | async }}
+</ng-template>
+<ng-template #cssTemplate>
+  {{ scssTemplate$ | async }}
+</ng-template>

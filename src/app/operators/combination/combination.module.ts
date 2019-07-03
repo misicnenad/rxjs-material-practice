@@ -15,6 +15,9 @@ import { StartWithComponent } from './start-with/start-with.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 import { ZipComponent } from './zip/zip.component';
 import { CombineAllSourceComponent } from './combine-all/combine-all-source.component';
+import { CombineLatestSourceComponent } from './combine-latest/combine-latest-source.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -31,10 +34,13 @@ import { CombineAllSourceComponent } from './combine-all/combine-all-source.comp
         RaceComponent,
         StartWithComponent,
         WithLatestFromComponent,
-        ZipComponent
+        ZipComponent,
+        CombineLatestSourceComponent
     ],
     imports: [
         CommonModule,
+        HttpClientModule,
+        SharedModule,
         CombinationRoutingModule,
     ],
 })

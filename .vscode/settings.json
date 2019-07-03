@@ -11,5 +11,7 @@
   "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
   "typescript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "html.format.wrapAttributes": "force-aligned"
+  "html.format.wrapAttributes": "force-aligned",
+  "editor.wordWrapColumn": 60,
+  "javascript.preferences.quoteStyle": "single"
 }

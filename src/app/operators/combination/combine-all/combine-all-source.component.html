@@ -1,1 +1,15 @@
-<p>combine all source</p>
+<rmp-source-code-container
+  [htmlTemplate]="htmlTemplate"
+  [typescriptTemplate]="typescriptTemplate"
+  [scssTemplate]="scssTemplate"
+></rmp-source-code-container>
+
+<ng-template #htmlTemplate>
+  <div [innerHTML]="htmlTemplate$ | async"></div>
+</ng-template>
+<ng-template #typescriptTemplate>
+  <div [innerHTML]="typescriptTemplate$ | async"></div>
+</ng-template>
+<ng-template #scssTemplate>
+  <div [innerHTML]="scssTemplate$ | async"></div>
+</ng-template>

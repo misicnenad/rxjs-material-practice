@@ -3,17 +3,28 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name">{{title}}</h1>
+    <h1 class="example-app-name">{{ title }}</h1>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #sidenav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-      fixedTopGap="56">
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #sidenav
+      opened
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
       <rmp-sidebar-content></rmp-sidebar-content>
     </mat-sidenav>
 
     <mat-sidenav-content class="main-content">
-      <rmp-content-container></rmp-content-container>
+      <router-outlet #homeOutlet="outlet"></router-outlet>
+      <ng-container *ngIf="!homeOutlet.isActivated">
+        <rmp-content-container></rmp-content-container>
+      </ng-container>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
