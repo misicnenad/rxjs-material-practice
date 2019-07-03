@@ -4,7 +4,7 @@
       <ng-container
         *ngTemplateOutlet="
           item.children ? hasChildren : noChildren;
-          context: { item: item, isExpanded: true }
+          context: { item: item, isExpanded: true, textStyle: 'bold' }
         "
       >
       </ng-container>
@@ -12,11 +12,19 @@
   </mat-accordion>
 </mat-nav-list>
 
-<ng-template #hasChildren let-item="item" let-parentRoute="parentRoute || ''" let-isExpanded="isExpanded">
+<ng-template
+  #hasChildren
+  let-item="item"
+  let-parentRoute="parentRoute || ''"
+  let-isExpanded="isExpanded"
+  let-textStyle="textStyle"
+>
   <mat-expansion-panel [expanded]="isExpanded">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ item.displayName }}
+        <span [ngStyle]="{ 'font-weight': textStyle }">{{
+          item.displayName
+        }}</span>
       </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-accordion>
@@ -36,8 +44,13 @@
   </mat-expansion-panel>
 </ng-template>
 
-<ng-template #noChildren let-item="item" let-parentRoute="parentRoute || ''">
+<ng-template
+  #noChildren
+  let-item="item"
+  let-parentRoute="parentRoute || ''"
+  let-textStyle="textStyle"
+>
   <a mat-list-item routerLink="{{ parentRoute }}{{ item.route }}">
-    {{ item.displayName }}
+    <span [ngStyle]="{ 'font-weight': textStyle }">{{ item.displayName }}</span>
   </a>
 </ng-template>

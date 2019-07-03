@@ -1,0 +1,19 @@
+<div class="content-container">
+  <mat-card>
+    <mat-toolbar color="accent" class="mat-toolbar-content">
+      <span>{{ sourceCodePanelTitle }}</span>
+    </mat-toolbar>
+    <mat-card-content>
+      <router-outlet name="sourceCodeOutlet"></router-outlet>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-toolbar color="accent" class="mat-toolbar-content">
+      <span>{{ codeExecutionPanelTitle }}</span>
+    </mat-toolbar>
+    <mat-card-content>
+      <router-outlet name="codeExecutionOutlet"></router-outlet>
+    </mat-card-content>
+  </mat-card>
+</div>
