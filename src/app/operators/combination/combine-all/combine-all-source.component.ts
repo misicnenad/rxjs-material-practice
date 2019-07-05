@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { forkJoin, Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'rmp-combine-all-source',
@@ -8,23 +9,27 @@ import { Observable } from 'rxjs';
   styleUrls: ['./combine-all-source.component.scss'],
 })
 export class CombineAllSourceComponent implements OnInit {
-  htmlTemplate$: Observable<string>;
-  typescriptTemplate$: Observable<string>;
-  scssTemplate$: Observable<string>;
+  templates$: Observable<any>;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.htmlTemplate$ = this.http.get(
-      'assets/source/operators/combination/combine-all/combine-all.component.html',
-      { responseType: 'text' }
+    this.templates$ = forkJoin([
+      this.getSourceCode('html'),
+      this.getSourceCode('ts'),
+      this.getSourceCode('scss'),
+    ]).pipe(
+      map(([htmlTemplate, typescriptTemplate, scssTemplate]) => ({
+        htmlTemplate,
+        typescriptTemplate,
+        scssTemplate,
+      }))
     );
-    this.typescriptTemplate$ = this.http.get(
-      'assets/source/operators/combination/combine-all/combine-all.component.ts',
-      { responseType: 'text' }
-    );
-    this.scssTemplate$ = this.http.get(
-      'assets/source/operators/combination/combine-all/combine-all.component.scss',
+  }
+
+  private getSourceCode(fileType: string): Observable<string> {
+    return this.http.get(
+      `assets/source/operators/combination/combine-all/combine-all.component.${fileType}`,
       { responseType: 'text' }
     );
   }

@@ -1,15 +1,17 @@
-<rmp-source-code-container
-  [htmlTemplate]="htmlTemplate"
-  [typescriptTemplate]="typescriptTemplate"
-  [scssTemplate]="scssTemplate"
-></rmp-source-code-container>
+<ng-container *ngIf="templates$ | async as templates">
+  <rmp-source-code-container
+    [htmlTemplate]="htmlTemplate"
+    [typescriptTemplate]="typescriptTemplate"
+    [scssTemplate]="scssTemplate"
+  ></rmp-source-code-container>
 
-<ng-template #htmlTemplate>
-  <div [innerHTML]="htmlTemplate$ | async"></div>
-</ng-template>
-<ng-template #typescriptTemplate>
-  <div [innerHTML]="typescriptTemplate$ | async"></div>
-</ng-template>
-<ng-template #scssTemplate>
-  <div [innerHTML]="scssTemplate$ | async"></div>
-</ng-template>
+  <ng-template #htmlTemplate>
+    {{templates.htmlTemplate}}
+  </ng-template>
+  <ng-template #typescriptTemplate>
+    {{templates.typescriptTemplate}}
+  </ng-template>
+  <ng-template #scssTemplate>
+    {{templates.scssTemplate}}
+  </ng-template>
+</ng-container>
